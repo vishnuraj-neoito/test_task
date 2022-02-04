@@ -1,0 +1,551 @@
+{
+	"info": {
+		"_postman_id": "b3f946cb-88ec-49c3-b365-7ab37b32d698",
+		"name": "Credit-Mountain-Task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "USER REGISTER",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"XYZ\",\n    \"email\": \"xyz@mailinator.com\",\n    \"password\": \"Test123#\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/v1/user/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"v1",
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "USER LOGIN",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"xyz@mailinator.com\",\n    \"password\": \"Test123#\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/v1/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"v1",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Child",
+			"item": [
+				{
+					"name": "ADD CHILD",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJpYXQiOjE2NDM4ODE1NzksImV4cCI6MTY0Mzg4NTE3OX0.7Z7-NSmBP75DnWq7aEDrwS6jCGVLSZXbqagE7J8Bzsw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"my child\",\n    \"age\": 23\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/v1/child",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"v1",
+								"child"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LIST ALL CHILD",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJpYXQiOjE2NDM4ODE1NzksImV4cCI6MTY0Mzg4NTE3OX0.7Z7-NSmBP75DnWq7aEDrwS6jCGVLSZXbqagE7J8Bzsw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/v1/child?page=1&limit=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"v1",
+								"child"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET CHILD BY ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJpYXQiOjE2NDM4ODE1NzksImV4cCI6MTY0Mzg4NTE3OX0.7Z7-NSmBP75DnWq7aEDrwS6jCGVLSZXbqagE7J8Bzsw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/v1/child/byId?child_id=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"v1",
+								"child",
+								"byId"
+							],
+							"query": [
+								{
+									"key": "child_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE CHILD DETAILS",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJpYXQiOjE2NDM4ODE1NzksImV4cCI6Mjg1MzQ4MTU3OX0.AGYq2dlbL62oH5wrUW8piz6Yt4sDvktCoqYHWM25YGk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"child_id\": 1,\n    \"name\": \"New child name\",\n    \"age\": 23\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/v1/child",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"v1",
+								"child"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE A CHILD",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJpYXQiOjE2NDM4ODE1NzksImV4cCI6Mjg1MzQ4MTU3OX0.AGYq2dlbL62oH5wrUW8piz6Yt4sDvktCoqYHWM25YGk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/v1/child?child_id=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"v1",
+								"child"
+							],
+							"query": [
+								{
+									"key": "child_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Credit cards",
+			"item": [
+				{
+					"name": "ADD NEW CREDIT CARD",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJpYXQiOjE2NDM4ODE1NzksImV4cCI6Mjg1MzQ4MTU3OX0.AGYq2dlbL62oH5wrUW8piz6Yt4sDvktCoqYHWM25YGk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"child_id\": 3,\n  \"type\": \"visa\",\n  \"number\": \"1235678901650\",\n  \"security_code\": \"013\",\n  \"expiration_month\": 2,\n  \"expiration_year\": 2022,\n  \"monthly_limit\": \"45736.50\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/v1/credit-cards",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"v1",
+								"credit-cards"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LIST ALL CREDIT CARDS",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJpYXQiOjE2NDM4ODE1NzksImV4cCI6Mjg1MzQ4MTU3OX0.AGYq2dlbL62oH5wrUW8piz6Yt4sDvktCoqYHWM25YGk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/v1/credit-cards?page=1&limit=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"v1",
+								"credit-cards"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SELECT A CREDIT CARD BY ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJpYXQiOjE2NDM4ODE1NzksImV4cCI6Mjg1MzQ4MTU3OX0.AGYq2dlbL62oH5wrUW8piz6Yt4sDvktCoqYHWM25YGk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/v1/credit-cards/byId?credit_card_id=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"v1",
+								"credit-cards",
+								"byId"
+							],
+							"query": [
+								{
+									"key": "credit_card_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE A CREDIT CARD",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJpYXQiOjE2NDM5MDk2MzgsImV4cCI6Mjg1MzUwOTYzOH0.c7qjXo_CFaKsdQQ5Aau-lDC603om_gWlyhyUajFqVbM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"credit_card_id\": 6,\n    \"monthly_limit\": \"35735.88\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/v1/credit-cards",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"v1",
+								"credit-cards"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE A CREDIT CARD",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJpYXQiOjE2NDM5MDk2MzgsImV4cCI6Mjg1MzUwOTYzOH0.c7qjXo_CFaKsdQQ5Aau-lDC603om_gWlyhyUajFqVbM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/v1/credit-cards?credit_card_id=6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"v1",
+								"credit-cards"
+							],
+							"query": [
+								{
+									"key": "credit_card_id",
+									"value": "6"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CHARGE A CARD",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJpYXQiOjE2NDM5ODI4ODIsImV4cCI6Mjg1MzU4Mjg4Mn0.98nu3kr0o4QyuveVVFXvR2OwpuLxQ-0qIEB-gQtMa_I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"credit_card_id\": 1,\n    \"amount\": \"1000.02\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/v1/credit-cards/charge",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"v1",
+								"credit-cards",
+								"charge"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LIST ALL TRANSACTIONS",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJpYXQiOjE2NDM5ODI4ODIsImV4cCI6Mjg1MzU4Mjg4Mn0.98nu3kr0o4QyuveVVFXvR2OwpuLxQ-0qIEB-gQtMa_I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/v1/credit-cards/transactions?credit_card_id=1&page=1&limit=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"v1",
+								"credit-cards",
+								"transactions"
+							],
+							"query": [
+								{
+									"key": "credit_card_id",
+									"value": "1"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
